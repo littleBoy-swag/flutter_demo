@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/common/ui/icon_tab.dart';
+import 'package:flutter_demo/my/my.dart';
+import 'package:flutter_demo/company/company.dart';
+import 'package:flutter_demo/message/message.dart';
+import 'package:flutter_demo/recommend/recommend.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,7 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 const double _kTabTextSize = 11.0;
-const int INDEX_JOB = 0;
+const int INDEX_RECOMMEND = 0;
 const int INDEX_COMPANY = 1;
 const int INDEX_MSG = 2;
 const int INDEX_MY = 3;
@@ -38,13 +42,46 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: TabBarView(
-        children: <Widget>[],
+        children: <Widget>[RecommendPage(), CompanyPage(), MsgPage(), MyPage()],
         controller: _controller,
       ),
       bottomNavigationBar: Material(
         color: Colors.white,
         child: TabBar(
-          tabs: <IconTab>[],
+          tabs: <IconTab>[
+            IconTab(
+              icon: _curIndex == INDEX_RECOMMEND
+                  ? "assets/images/home_sel.png"
+                  : "assets/images/home_nor.png",
+              text: "首页",
+              color: _curIndex == INDEX_RECOMMEND
+                  ? _kPrimaryColor
+                  : Colors.cyan[300],
+            ),
+            IconTab(
+              icon: _curIndex == INDEX_COMPANY
+                  ? "assets/images/service_sel.png"
+                  : "assets/images/service_nor.png",
+              text: "首页",
+              color: _curIndex == INDEX_COMPANY
+                  ? _kPrimaryColor
+                  : Colors.cyan[300],
+            ),
+            IconTab(
+              icon: _curIndex == INDEX_MSG
+                  ? "assets/images/second_sel.png"
+                  : "assets/images/second_nor.png",
+              text: "首页",
+              color: _curIndex == INDEX_MSG ? _kPrimaryColor : Colors.cyan[300],
+            ),
+            IconTab(
+              icon: _curIndex == INDEX_MY
+                  ? "assets/images/me_sel.png"
+                  : "assets/images/me_nor.png",
+              text: "我的",
+              color: _curIndex == INDEX_MY ? _kPrimaryColor : Colors.cyan[300],
+            ),
+          ],
         ),
       ),
     );
