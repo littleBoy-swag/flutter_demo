@@ -44,10 +44,16 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
       body: TabBarView(
         children: <Widget>[RecommendPage(), CompanyPage(), MsgPage(), MyPage()],
         controller: _controller,
+        physics: NeverScrollableScrollPhysics(),
       ),
       bottomNavigationBar: Material(
         color: Colors.white,
         child: TabBar(
+          controller: _controller,
+          indicatorSize: TabBarIndicatorSize.label,
+          labelStyle: TextStyle(
+            fontSize: _kTabTextSize,
+          ),
           tabs: <IconTab>[
             IconTab(
               icon: _curIndex == INDEX_RECOMMEND
@@ -62,7 +68,7 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
               icon: _curIndex == INDEX_COMPANY
                   ? "assets/images/service_sel.png"
                   : "assets/images/service_nor.png",
-              text: "首页",
+              text: "公司",
               color: _curIndex == INDEX_COMPANY
                   ? _kPrimaryColor
                   : Colors.cyan[300],
@@ -71,7 +77,7 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
               icon: _curIndex == INDEX_MSG
                   ? "assets/images/second_sel.png"
                   : "assets/images/second_nor.png",
-              text: "首页",
+              text: "消息",
               color: _curIndex == INDEX_MSG ? _kPrimaryColor : Colors.cyan[300],
             ),
             IconTab(

@@ -11,9 +11,10 @@ class MsgState extends State<MsgPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text(
+        body: Center(
+      child: Text(
         "message",
       ),
-    );
+    ));
   }
 }

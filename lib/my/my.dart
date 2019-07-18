@@ -11,9 +11,10 @@ class MyState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text(
+        body: Center(
+      child: Text(
         "my",
       ),
-    );
+    ));
   }
 }

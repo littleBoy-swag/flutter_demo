@@ -11,9 +11,10 @@ class RecommendState extends State<RecommendPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text(
-        "Recommend",
+        body: Center(
+      child: Text(
+        "recommend",
       ),
-    );
+    ));
   }
 }

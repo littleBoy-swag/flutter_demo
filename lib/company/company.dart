@@ -11,9 +11,10 @@ class CompanyState extends State<CompanyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text(
+        body: Center(
+      child: Text(
         "company",
       ),
-    );
+    ));
   }
 }
