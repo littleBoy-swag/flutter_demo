@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/common/ui/icon_tab.dart';
 import 'package:flutter_demo/my/my.dart';
 import 'package:flutter_demo/company/company.dart';
-import 'package:flutter_demo/message/message.dart';
+import 'package:flutter_demo/message/msg_view.dart';
 import 'package:flutter_demo/recommend/jobs_view.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,7 +42,7 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: TabBarView(
-        children: <Widget>[JobsTab(), CompanyPage(), MsgPage(), MyPage()],
+        children: <Widget>[JobsTab(), CompanyPage(), MsgsTab(), MyPage()],
         controller: _controller,
         physics: NeverScrollableScrollPhysics(),
       ),
