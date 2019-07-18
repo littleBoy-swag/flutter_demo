@@ -3,7 +3,7 @@ import 'package:flutter_demo/common/ui/icon_tab.dart';
 import 'package:flutter_demo/my/my.dart';
 import 'package:flutter_demo/company/company.dart';
 import 'package:flutter_demo/message/message.dart';
-import 'package:flutter_demo/recommend/recommend.dart';
+import 'package:flutter_demo/recommend/jobs_view.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -42,7 +42,7 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       body: TabBarView(
-        children: <Widget>[RecommendPage(), CompanyPage(), MsgPage(), MyPage()],
+        children: <Widget>[JobsTab(), CompanyPage(), MsgPage(), MyPage()],
         controller: _controller,
         physics: NeverScrollableScrollPhysics(),
       ),
@@ -96,5 +96,6 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
   @override
   void dispose() {
     super.dispose();
+    _controller.dispose();
   }
 }
