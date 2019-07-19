@@ -4,6 +4,8 @@ import 'package:flutter_demo/my/my.dart';
 import 'package:flutter_demo/company/company.dart';
 import 'package:flutter_demo/message/msg_view.dart';
 import 'package:flutter_demo/recommend/jobs_view.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_demo/common/utils/util.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -23,6 +25,7 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
   int _curIndex = 0;
   TabController _controller;
   VoidCallback onChanged;
+  DateTime lastPopTime;
 
   @override
   void initState() {
@@ -40,7 +43,9 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+
+    return WillPopScope(
+      child: Scaffold(
       body: TabBarView(
         children: <Widget>[JobsTab(), CompanyPage(), MsgsTab(), MyPage()],
         controller: _controller,
@@ -90,7 +95,20 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
           ],
         ),
       ),
+    ),
+    onWillPop: ()async{
+      // 点击返回键的操作
+      if (lastPopTime == null || DateTime.now().difference(lastPopTime)>Duration(seconds: 2)) {
+        lastPopTime = DateTime.now();
+        ToastUtil.showToast('再按一次退出应用');
+      } else {
+        lastPopTime = DateTime.now();
+        await SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+      }
+    },
     );
+
+    
   }
 
   @override

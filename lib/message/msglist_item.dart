@@ -18,9 +18,13 @@ class MsgListItem extends StatelessWidget {
                 right: 15.0,
                 bottom: 0.0,
               ),
-              child: CircleAvatar(
-                radius: 20.0,
-                backgroundImage: NetworkImage(msg.avatar),
+              child: Align(
+                child: CircleAvatar(
+                  child: Image.network(msg.avatar),
+                  backgroundImage: NetworkImage(msg.avatar),
+                  backgroundColor: Color(0xFF00D7C6),
+                  radius: 20.0,
+                ),
               ),
             ),
             Expanded(

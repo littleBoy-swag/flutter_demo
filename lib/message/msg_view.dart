@@ -21,13 +21,13 @@ class MsgList extends State<MsgsTab> {
       {
         "list":[
           {
-            "avatar":"http://b-ssl.duitang.com/uploads/item/201510/08/20151008192345_uPC5U.jpeg",
+            "avatar":"https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=f04e9a4e6c09c93d13ff06a5fe5493b9/f3d3572c11dfa9ecb34a865769d0f703918fc10e.jpg",
             "name":"宋伊人",
             "company":"字节跳动",
             "position":"HRBP",
             "msg":"在吗?"
           },{
-            "avatar":"http://5b0988e595225.cdn.sohucs.com/images/20180803/cd2563e2057f467989842afa9b527f40.png",
+            "avatar":"https://gss2.bdstatic.com/-fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=1eb71d5a6f380cd7f213aabfc02dc651/a6efce1b9d16fdfa01982404be8f8c5495ee7b60.jpg",
             "name":"王帅",
             "company":"蚂蚁金服",
             "position":"HR",
