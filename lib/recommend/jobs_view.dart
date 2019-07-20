@@ -7,13 +7,17 @@ class JobsTab extends StatefulWidget {
   JobList createState() => JobList();
 }
 
-class JobList extends State<JobsTab> {
+class JobList extends State<JobsTab> with AutomaticKeepAliveClientMixin{
   List<Job> _jobs = [];
   @override
   void initState() {
     super.initState();
     getJobList();
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 
   void getJobList() {
     setState(() {

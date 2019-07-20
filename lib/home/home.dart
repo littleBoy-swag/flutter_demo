@@ -43,72 +43,72 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-
     return WillPopScope(
       child: Scaffold(
-      body: TabBarView(
-        children: <Widget>[JobsTab(), CompanyPage(), MsgsTab(), MyPage()],
-        controller: _controller,
-        physics: NeverScrollableScrollPhysics(),
-      ),
-      bottomNavigationBar: Material(
-        color: Colors.white,
-        child: TabBar(
+        body: TabBarView(
+          children: <Widget>[JobsTab(), CompanyPage(), MsgsTab(), MyPage()],
           controller: _controller,
-          indicatorSize: TabBarIndicatorSize.label,
-          labelStyle: TextStyle(
-            fontSize: _kTabTextSize,
+          physics: NeverScrollableScrollPhysics(),
+        ),
+        bottomNavigationBar: Material(
+          color: Colors.white,
+          child: TabBar(
+            controller: _controller,
+            indicatorSize: TabBarIndicatorSize.label,
+            labelStyle: TextStyle(
+              fontSize: _kTabTextSize,
+            ),
+            tabs: <IconTab>[
+              IconTab(
+                icon: _curIndex == INDEX_RECOMMEND
+                    ? "assets/images/home_sel.png"
+                    : "assets/images/home_nor.png",
+                text: "首页",
+                color: _curIndex == INDEX_RECOMMEND
+                    ? _kPrimaryColor
+                    : Colors.cyan[300],
+              ),
+              IconTab(
+                icon: _curIndex == INDEX_COMPANY
+                    ? "assets/images/service_sel.png"
+                    : "assets/images/service_nor.png",
+                text: "公司",
+                color: _curIndex == INDEX_COMPANY
+                    ? _kPrimaryColor
+                    : Colors.cyan[300],
+              ),
+              IconTab(
+                icon: _curIndex == INDEX_MSG
+                    ? "assets/images/second_sel.png"
+                    : "assets/images/second_nor.png",
+                text: "消息",
+                color:
+                    _curIndex == INDEX_MSG ? _kPrimaryColor : Colors.cyan[300],
+              ),
+              IconTab(
+                icon: _curIndex == INDEX_MY
+                    ? "assets/images/me_sel.png"
+                    : "assets/images/me_nor.png",
+                text: "我的",
+                color:
+                    _curIndex == INDEX_MY ? _kPrimaryColor : Colors.cyan[300],
+              ),
+            ],
           ),
-          tabs: <IconTab>[
-            IconTab(
-              icon: _curIndex == INDEX_RECOMMEND
-                  ? "assets/images/home_sel.png"
-                  : "assets/images/home_nor.png",
-              text: "首页",
-              color: _curIndex == INDEX_RECOMMEND
-                  ? _kPrimaryColor
-                  : Colors.cyan[300],
-            ),
-            IconTab(
-              icon: _curIndex == INDEX_COMPANY
-                  ? "assets/images/service_sel.png"
-                  : "assets/images/service_nor.png",
-              text: "公司",
-              color: _curIndex == INDEX_COMPANY
-                  ? _kPrimaryColor
-                  : Colors.cyan[300],
-            ),
-            IconTab(
-              icon: _curIndex == INDEX_MSG
-                  ? "assets/images/second_sel.png"
-                  : "assets/images/second_nor.png",
-              text: "消息",
-              color: _curIndex == INDEX_MSG ? _kPrimaryColor : Colors.cyan[300],
-            ),
-            IconTab(
-              icon: _curIndex == INDEX_MY
-                  ? "assets/images/me_sel.png"
-                  : "assets/images/me_nor.png",
-              text: "我的",
-              color: _curIndex == INDEX_MY ? _kPrimaryColor : Colors.cyan[300],
-            ),
-          ],
         ),
       ),
-    ),
-    onWillPop: ()async{
-      // 点击返回键的操作
-      if (lastPopTime == null || DateTime.now().difference(lastPopTime)>Duration(seconds: 2)) {
-        lastPopTime = DateTime.now();
-        ToastUtil.showToast('再按一次退出应用');
-      } else {
-        lastPopTime = DateTime.now();
-        await SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-      }
-    },
+      onWillPop: () async {
+        // 点击返回键的操作
+        if (lastPopTime == null ||
+            DateTime.now().difference(lastPopTime) > Duration(seconds: 2)) {
+          lastPopTime = DateTime.now();
+          ToastUtil.showToast('再按一次退出应用');
+        } else {
+          lastPopTime = DateTime.now();
+          await SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+        }
+      },
     );
-
-    
   }
 
   @override

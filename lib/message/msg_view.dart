@@ -7,13 +7,17 @@ class MsgsTab extends StatefulWidget {
   MsgList createState() => MsgList();
 }
 
-class MsgList extends State<MsgsTab> {
+class MsgList extends State<MsgsTab> with AutomaticKeepAliveClientMixin{
   List<Msg> _msgs = [];
   @override
   void initState() {
     super.initState();
     getMsgList();
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 
   void getMsgList() {
     setState(() {
