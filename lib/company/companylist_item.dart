@@ -86,7 +86,7 @@ class CompanyListItem extends StatelessWidget {
                           ),
                           child: Text(
                             "热招：" +
-                                company.count +
+                                company.hot +
                                 " 等" +
                                 company.count +
                                 "个职位",
