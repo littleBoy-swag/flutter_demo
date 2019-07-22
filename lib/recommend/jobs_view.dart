@@ -161,13 +161,16 @@ class JobList extends State<JobsTab> with AutomaticKeepAliveClientMixin{
     var jobItem = InkWell(
       onTap: () {
         showDialog(
-            context: context,
-            child: AlertDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("正在开发"),
               content: Text(
                 "敬请期待",
                 style: TextStyle(fontSize: 20.0),
               ),
-            ));
+              );
+            },);
       },
       child: JobListItem(job),
     );
