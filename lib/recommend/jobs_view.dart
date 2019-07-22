@@ -164,10 +164,11 @@ class JobList extends State<JobsTab> with AutomaticKeepAliveClientMixin{
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text("正在开发"),
+              title: Text("正在开发",
+              style: TextStyle(fontSize: 18.0),),
               content: Text(
                 "敬请期待",
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 15.0),
               ),
               );
             },);

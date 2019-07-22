@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/common/ui/icon_tab.dart';
-import 'package:flutter_demo/my/my.dart';
 import 'package:flutter_demo/company/company_view.dart';
 import 'package:flutter_demo/message/msg_view.dart';
 import 'package:flutter_demo/recommend/jobs_view.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_demo/common/utils/util.dart';
+import 'package:flutter_demo/my/my_view.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -46,7 +46,7 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
     return WillPopScope(
       child: Scaffold(
         body: TabBarView(
-          children: <Widget>[JobsTab(), CompanysTab(), MsgsTab(), MyPage()],
+          children: <Widget>[JobsTab(), JobsTab(), MsgsTab(), MyTab()],
           controller: _controller,
           physics: NeverScrollableScrollPhysics(),
         ),

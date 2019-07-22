@@ -7,7 +7,7 @@ class MsgsTab extends StatefulWidget {
   MsgList createState() => MsgList();
 }
 
-class MsgList extends State<MsgsTab> with AutomaticKeepAliveClientMixin{
+class MsgList extends State<MsgsTab> with AutomaticKeepAliveClientMixin {
   List<Msg> _msgs = [];
   @override
   void initState() {
@@ -70,12 +70,18 @@ class MsgList extends State<MsgsTab> with AutomaticKeepAliveClientMixin{
       onTap: () {
         showDialog(
             context: context,
-            child: AlertDialog(
-              content: Text(
-                "敬请期待",
-                style: TextStyle(fontSize: 20.0),
-              ),
-            ));
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text(
+                  "正在开发",
+                  style: TextStyle(fontSize: 18.0),
+                ),
+                content: Text(
+                  "你有一条新消息",
+                  style: TextStyle(fontSize: 15.0),
+                ),
+              );
+            });
       },
       child: MsgListItem(msg),
     );
