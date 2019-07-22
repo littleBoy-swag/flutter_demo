@@ -17,11 +17,11 @@ class MyTab extends StatelessWidget {
                   DecoratedBox(
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        begin: const Alignment(0.0, -1.0),
-                        end: const Alignment(0.0, -0.4),
+                        begin: Alignment.centerRight,
+                        end: Alignment.centerLeft,
                         colors: const <Color>[
-                          const Color(0x00000000),
-                          const Color(0x00000000)
+                          Color.fromARGB(255, 242, 242, 245),
+                          Colors.greenAccent
                         ],
                       ),
                     ),
