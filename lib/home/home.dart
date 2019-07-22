@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/common/ui/icon_tab.dart';
-import 'package:flutter_demo/company/company_view.dart';
 import 'package:flutter_demo/message/msg_view.dart';
 import 'package:flutter_demo/recommend/jobs_view.dart';
 import 'package:flutter/services.dart';

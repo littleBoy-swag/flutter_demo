@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:flutter_demo/common/utils/util.dart';
 import 'package:flutter_demo/home/home.dart';
 
 class SplashPage extends StatefulWidget {
@@ -17,8 +16,7 @@ class SplashState extends State<SplashPage> {
   void initState() {
     super.initState();
     _timer = Timer(Duration(seconds: 3), () {
-      //TODO 跳转到主页面
-      // ToastUtil.showToast("This is a demo Toast");
+      // 跳转到主页面
       try {
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (BuildContext context) => HomePage()),

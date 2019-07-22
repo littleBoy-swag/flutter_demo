@@ -16,7 +16,6 @@ class MsgList extends State<MsgsTab> with AutomaticKeepAliveClientMixin {
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 
   void getMsgList() {

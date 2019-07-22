@@ -7,7 +7,6 @@ class JobListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Padding(
       padding: EdgeInsets.only(
         top: 1.5,

@@ -16,7 +16,6 @@ class JobList extends State<JobsTab> with AutomaticKeepAliveClientMixin{
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 
   void getJobList() {
