@@ -60,7 +60,7 @@ class MyTab extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                "在职--在考虑机会",
+                                "SF -- 就职于美国洛杉矶湖人队",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 13.0,
