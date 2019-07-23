@@ -24,7 +24,7 @@ class CompanyDetailState extends State<CompanyDetail>
   List<String> _urls = [
     'https://gw.alipayobjects.com/zos/rmsportal/rdDIHRctzBPCgOiKAKDG.jpg',
     'https://gw.alipayobjects.com/zos/rmsportal/UUYEwxEZfKjrarbCDBBf.jpg',
-    'https://gw.alipayobjects.com/zos/rmsportal/UUYEwxEZfKjrarbCDBBf.jpg'
+    'https://gw.alipayobjects.com/zos/rmsportal/dqHtpdbLPSTUHVYZBUGV.jpg'
   ];
   Widget _companyTabContent;
   VoidCallback onChanged;
