@@ -105,8 +105,10 @@ class HomeState extends State<HomePage> with SingleTickerProviderStateMixin {
           ToastUtil.showToast('再按一次退出应用');
         } else {
           lastPopTime = DateTime.now();
-          await SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+//          await SystemChannels.platform.invokeMethod('SystemNavigator.pop'); //没有返回值而且使用了反射
+          return Future.value(true); //这种写法更好 true为退出应用 不过需要dart2.1版本以上
         }
+        return Future.value(false);
       },
     );
   }
